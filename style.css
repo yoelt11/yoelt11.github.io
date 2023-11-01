@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+
+nav li {
+    margin: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+section {
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    line-height: 1.5;
+}
+
+/* Styling for the "Education" section */
+#education {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+/* Styling for the "Publications" section */
+#publications {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+/* General link styling */
+a {
+    color: #0070c9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
