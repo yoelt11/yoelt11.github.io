@@ -1,67 +1,90 @@
 body {
+    background-color: #000;
+    color: #fff;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-}
-
-nav li {
-    margin: 10px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-}
-
-section {
+.container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
+    text-align: center; /* Center content in the container */
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.profile .icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
+.navigation {
+    margin-top: 20px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.articles, .projects {
+    margin-top: 30px;
+    text-align: left; /* Align text to the left */
 }
 
 h2 {
-    color: #333;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
 }
 
-p {
-    line-height: 1.5;
+.article, .project {
+    margin-top: 10px;
 }
 
-/* Styling for the "Education" section */
-#education {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 20px;
+.show-more {
+    background-color: #fff;
+    color: #000;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto; /* Center the button */
+    display: block; /* Make it a block element to center it */
 }
 
-/* Styling for the "Publications" section */
-#publications {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 20px;
+.article h3 {
+    margin: 0; /* Remove default margin for better styling */
 }
 
-/* General link styling */
-a {
-    color: #0070c9;
-    text-decoration: none;
+.project h3 {
+    margin: 0; /* Remove default margin for better styling */
 }
 
-a:hover {
-    text-decoration: underline;
+.article-info {
+    font-size: 14px;
+    color: #999; /* Adjust color for smaller text */
 }
 
+.project-info {
+    font-size: 14px;
+    color: #999; /* Adjust color for smaller text */
+}
