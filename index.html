@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Edgar Torres - GitHub</title>
 </head>
 <body>
     <div class="container">
         <div class="profile">
             <img src="profile-picture.png" alt="Profile Picture">
-            <h1>Hi, I'm Edgar Torres!</h1>
+            <h1 class="title"> Hi, I'm Edgar Torres!</h1>
+            <p class="subtitle">[A Machine Learning Researcher]</p>
             <div class="social-links">
                 <a href="https://twitter.com/yourtwitter" target="_blank"><img class="icon" src="icons/twitter-icon.png" alt="Twitter"></a>
                 <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank"><img class="icon" src="icons/linkedin-icon.png" alt="LinkedIn"></a>
@@ -26,33 +28,18 @@
         </nav>
 
         <section class="articles">
-            <h2>Recent Articles</h2>
-            <!-- Add your recent articles here -->
-            <div class="article">
-                <h3>Article Title 1</h3>
-                <p class="article-info">[Journal] · Date 1</p>
+            <h2>Articles</h2>
+            <div class="article-container">
             </div>
-            <div class="article">
-                <h3>Article Title 2</h3>
-                <p class="article-info">[Journal] · Date 2</p>
-            </div>
-            <!-- Add more articles as needed -->
-            <button class="show-more">Show More Articles</button>
+            <button class="toggle-button toggle-articles" aria-expanded="false">+</button>
         </section>
 
         <section class="projects">
             <h2>Projects</h2>
+            <div class="project-container">
             <!-- Add your projects here -->
-            <div class="project">
-            <h3>Project Name 1</h3>
-            <p class="project-info">[Status] · Date 1</p>
             </div>
-            <div class="project">
-                <h3>Project Name 2</h3>
-                <p class="project-info">[Status] · Date 2</p>
-            </div>
-            <!-- Add more projects as needed -->
-            <button class="show-more">Show More Projects</button>
+            <button class="toggle-button toggle-projects" aria-expanded="false">+</button>
         </section>
     </div>
 </body>
