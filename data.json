@@ -1,13 +1,13 @@
 {
   "articles": [
-    { "title": "Article Title 1", "info": "[Journal] · Date 1" },
-    { "title": "Article Title 2", "info": "[Journal] · Date 2" },
-    { "title": "Article Title 3", "info": "[Journal] · Date 3" }
+    { "title": "Implementation of an Artificial Neural Network Framework for Reduced Order Modeling", "info": "[Mater Thesis] · 31.10.2023" },
+    { "title": " ", "info": " " },
+    { "title": " ", "info": " " }
   ],
   "projects": [
-    { "title": "Project Name 1", "info": "[Status] · Date 1" },
-    { "title": "Project Name 2", "info": "[Status] · Date 2" },
-    { "title": "Project Name 3", "info": "[Status] · Date 3" }
+    { "title": " ", "info": " " },
+    { "title": " ", "info": " " },
+    { "title": " ", "info": " " }
   ]
 }
 
