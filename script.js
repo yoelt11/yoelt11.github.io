@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 i++;
             });
         }
-        alert(isExpanded);
 
         // Toggle the button text and aria-expanded attribute
         button.textContent = !isExpanded ? '-' : '+';
