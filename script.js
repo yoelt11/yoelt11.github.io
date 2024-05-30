@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then((data) => {
       populateSection(articlesContainer, data.articles, "article");
-      populateSection(blogsContainer, data.blogs, "blogs");
+      populateSection(blogsContainer, data.blogs, "blog");
       populateSection(projectsContainer, data.projects, "project");
     })
     .catch((error) => console.error("Error fetching data:", error));
