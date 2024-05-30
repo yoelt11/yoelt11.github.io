@@ -22,10 +22,23 @@ document.addEventListener("DOMContentLoaded", function () {
       const sectionDiv = document.createElement("div");
       sectionDiv.classList.add(className);
       sectionDiv.setAttribute("data-state", index < 2 ? "show" : "hide"); // Set initial data-state
-      sectionDiv.innerHTML = `
-                <h3>${item.title}</h3>
-                <p class="${className}-info">${item.info}</p>
-            `;
+
+      // Check if className is 'blog' to render a link
+      if (className === "blog" && item.info.includes("https://")) {
+        const [link, date] = item.info.split("·");
+        sectionDiv.innerHTML = `
+          <h3>${item.title}</h3>
+          <p class="${className}-info">
+            <a href="${link.trim()}" target="_blank">${link.trim()}</a> · ${date.trim()}
+          </p>
+        `;
+      } else {
+        sectionDiv.innerHTML = `
+          <h3>${item.title}</h3>
+          <p class="${className}-info">${item.info}</p>
+        `;
+      }
+
       container.appendChild(sectionDiv);
     });
   }
