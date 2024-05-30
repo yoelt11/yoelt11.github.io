@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Check if className is 'blog' to render a link
       if (className === "blog" && item.info.includes("https://")) {
-        const [link, date] = item.info.split("·");
+        const [link, date] = item.info.split(" · ");
         sectionDiv.innerHTML = `
           <h3>${item.title}</h3>
           <p class="${className}-info">
