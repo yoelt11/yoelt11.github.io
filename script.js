@@ -62,14 +62,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   articlesButton.addEventListener("click", function () {
-    toggleSection(articlesButton, articlesContainer);
+    toggleSection(articlesButton, articlesContainer, articles);
   });
 
   projectsButton.addEventListener("click", function () {
-    toggleSection(projectsButton, projectsContainer);
+    toggleSection(projectsButton, projectsContainer, projects);
   });
 
   blogsButton.addEventListener("click", function () {
-    toggleSection(blogsButton, blogsContainer);
+    toggleSection(blogsButton, blogsContainer, blogs);
   });
 });
