@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const blogsButton = document.querySelector(".toggle-blogs");
   const projectsButton = document.querySelector(".toggle-projects");
   const articlesContainer = document.querySelector(".article-container");
-  const blogsContainer = document.querySelector(".blog-container"); // Corrected the class name
+  const blogsContainer = document.querySelector(".blog-container");
   const projectsContainer = document.querySelector(".project-container");
 
   // Populate with articles and projects
