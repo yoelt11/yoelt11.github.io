@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const blogsButton = document.querySelector(".toggle-blogs");
   const projectsButton = document.querySelector(".toggle-projects");
   const articlesContainer = document.querySelector(".article-container");
-  const blogsContainer = document.querySelector(".blogs-container");
+  const blogsContainer = document.querySelector(".blog-container");
   const projectsContainer = document.querySelector(".project-container");
 
   // Populate with articles and projects
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     } else {
       const default_show = 2;
-      var i = 0;
+      let i = 0;
       showItems.forEach((item) => {
         if (i >= default_show) {
           item.setAttribute("data-state", "hide");
@@ -62,14 +62,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   articlesButton.addEventListener("click", function () {
-    toggleSection(articlesButton, articlesContainer, articles);
+    toggleSection(articlesButton, articlesContainer, "article");
   });
 
   projectsButton.addEventListener("click", function () {
-    toggleSection(projectsButton, projectsContainer, projects);
+    toggleSection(projectsButton, projectsContainer, "project");
   });
 
   blogsButton.addEventListener("click", function () {
-    toggleSection(blogsButton, blogsContainer, blogs);
+    toggleSection(blogsButton, blogsContainer, "blog");
   });
 });
