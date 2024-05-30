@@ -4,13 +4,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const blogsButton = document.querySelector(".toggle-blogs");
   const projectsButton = document.querySelector(".toggle-projects");
   const articlesContainer = document.querySelector(".article-container");
-  const blogsContainer = document.querySelector(".blog-container");
+  const blogsContainer = document.querySelector(".blog-container"); // Corrected the class name
   const projectsContainer = document.querySelector(".project-container");
 
   // Populate with articles and projects
   fetch("data.json")
     .then((response) => response.json())
     .then((data) => {
+      console.log(data); // Log the data to verify it's fetched correctly
       populateSection(articlesContainer, data.articles, "article");
       populateSection(blogsContainer, data.blogs, "blog");
       populateSection(projectsContainer, data.projects, "project");
