@@ -1,13 +1,26 @@
 {
   "articles": [
-    { "title": "Implementation of an Artificial Neural Network Framework for Reduced Order Modeling", "info": "[Mater Thesis] · 31.10.2023" },
+    {
+      "title": "Implementation of an Artificial Neural Network Framework for Reduced Order Modeling",
+      "info": "[Mater Thesis] · 31.10.2023"
+    },
     { "title": " ", "info": " " },
     { "title": " ", "info": " " }
   ],
   "projects": [
-    { "title": "Activity Recognition via Object Detection and Sequences of Poses ", "info": "[Anasoft Technology AG - DE] · 15.07.2023 - 15.03.2020" },
+    {
+      "title": "Activity Recognition via Object Detection and Sequences of Poses ",
+      "info": "[Anasoft Technology AG - DE] · 15.07.2023 - 15.03.2020"
+    },
+    { "title": " ", "info": " " },
+    { "title": " ", "info": " " }
+  ],
+  "blogs": [
+    {
+      "title": "Test Blog ",
+      "info": "[https://cosmic-octopus.notion.site/Blog-Post-688694d5382d4b7eb93304b043f76349]· 15.07.2024"
+    },
     { "title": " ", "info": " " },
     { "title": " ", "info": " " }
   ]
 }
-

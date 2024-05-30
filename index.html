@@ -1,47 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <title>Edgar Torres - GitHub</title>
-</head>
-<body>
-    <div class="container">
-        <div class="profile">
-            <img src="profile-picture.png" alt="Profile Picture">
-            <h1 class="title"> Hi, I'm Edgar Torres!</h1>
-            <p class="subtitle">[A Machine Learning Researcher]</p>
-            <div class="social-links">
-                <a href="https://twitter.com/EYTR_11" target="_blank"><img class="icon" src="icons/twitter-icon.png" alt="Twitter"></a>
-                <a href="https://www.linkedin.com/in/etorres11" target="_blank"><img class="icon" src="icons/linkedin-icon.png" alt="LinkedIn"></a>
-                <a href="https://github.com/yoelt11" target="_blank"><img class="icon" src="icons/github-icon.png" alt="GitHub"></a>
-                <a href="https://www.ki.uni-stuttgart.de/institute/team/Torres-00003" target="_blank"><img class="icon" src="icons/website-icon.png" alt="Website"></a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+        <title>Edgar Torres - GitHub</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="profile">
+                <img src="profile-picture.png" alt="Profile Picture" />
+                <h1 class="title">Hi, I'm Edgar Torres!</h1>
+                <p class="subtitle">
+                    [A Machine Learning Researcher and Musician]
+                </p>
+                <div class="social-links">
+                    <a href="https://twitter.com/EYTR_11" target="_blank"
+                        ><img
+                            class="icon"
+                            src="icons/twitter-icon.png"
+                            alt="Twitter"
+                    /></a>
+                    <a
+                        href="https://www.linkedin.com/in/etorres11"
+                        target="_blank"
+                        ><img
+                            class="icon"
+                            src="icons/linkedin-icon.png"
+                            alt="LinkedIn"
+                    /></a>
+                    <a href="https://github.com/yoelt11" target="_blank"
+                        ><img
+                            class="icon"
+                            src="icons/github-icon.png"
+                            alt="GitHub"
+                    /></a>
+                    <a
+                        href="https://www.ki.uni-stuttgart.de/institute/team/Torres-00003"
+                        target="_blank"
+                        ><img
+                            class="icon"
+                            src="icons/website-icon.png"
+                            alt="Website"
+                    /></a>
+                </div>
             </div>
+
+            <nav class="navigation">
+                <a href="#" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <section class="articles">
+                <h2>Articles</h2>
+                <div class="article-container"></div>
+                <button
+                    class="toggle-button toggle-articles"
+                    aria-expanded="false"
+                >
+                    +
+                </button>
+            </section>
+
+            <section class="projects">
+                <h2>Projects</h2>
+                <div class="project-container">
+                    <!-- Add your projects here -->
+                </div>
+                <button
+                    class="toggle-button toggle-projects"
+                    aria-expanded="false"
+                >
+                    +
+                </button>
+            </section>
+
+            <section class="blogs">
+                <h2>Blogs</h2>
+                <div class="blog-container"></div>
+                <button
+                    class="toggle-button toggle-blogs"
+                    aria-expanded="false"
+                >
+                    +
+                </button>
+            </section>
         </div>
-
-        <nav class="navigation">
-            <a href="#" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-        </nav>
-
-        <section class="articles">
-            <h2>Articles</h2>
-            <div class="article-container">
-            </div>
-            <button class="toggle-button toggle-articles" aria-expanded="false">+</button>
-        </section>
-
-        <section class="projects">
-            <h2>Projects</h2>
-            <div class="project-container">
-            <!-- Add your projects here -->
-            </div>
-            <button class="toggle-button toggle-projects" aria-expanded="false">+</button>
-        </section>
-    </div>
-</body>
+    </body>
 </html>
-
