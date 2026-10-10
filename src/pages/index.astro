@@ -3,20 +3,26 @@ import Layout from "../layouts/Layout.astro";
 ---
 <Layout title="Edgar Torres" active="home">
   <section class="hero">
-    <h1>Hi, I'm Edgar Torres</h1>
-    <p class="sub">Machine Learning Researcher &amp; Musician</p>
-    <p>I work on physics-informed neural networks, radial-basis-function methods, and
-       domain decomposition for amortized PDE solving. Selected work below; full lists in
-       each tab.</p>
-  </section>
-  <section>
-    <h2>Latest projects</h2>
-    <p><a href="/projects/">All projects →</a></p>
+    <div class="hero-card">
+      <img class="portrait" src="/profile-picture.png" alt="Edgar Torres" />
+      <div class="hero-text">
+        <h1>Hi, I'm Edgar Torres</h1>
+        <p class="sub">Machine Learning Researcher &amp; Musician</p>
+        <p>I work on physics-informed neural networks, radial-basis-function methods, and
+           domain decomposition for amortized PDE solving. Selected work below; full lists
+           in each tab.</p>
+      </div>
+    </div>
   </section>
 </Layout>
 <style is:inline>
   .hero { padding:4rem 0 2rem; }
+  .hero-card { display:flex; gap:2rem; align-items:center; flex-wrap:wrap; }
+  .portrait { width:170px; height:170px; border-radius:50%; object-fit:cover;
+              border:3px solid #a855f7; box-shadow:0 0 0 6px rgba(168,85,247,.12),
+              0 10px 40px rgba(168,85,247,.25); }
+  .hero-text { flex:1; min-width:260px; }
   .hero h1 { font-size:2.6rem; margin:0 0 .4rem; }
-  .sub { color:#f0b429; font-weight:600; margin:0 0 1rem; }
-  .hero p:last-child { color:#8b949e; max-width:64ch; }
+  .sub { color:#fbbf24; font-weight:600; margin:0 0 1rem; }
+  .hero p:last-child { color:#a99fc4; max-width:64ch; }
 </style>
