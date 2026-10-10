@@ -9,13 +9,13 @@ const { href, title, teaser, meta, tags = [] } = Astro.props;
   {tags.length>0 && <div class="tags">{tags.map(t=><span class="tag">{t}</span>)}</div>}
 </a>
 <style>
-  .card { display:block; border:1px solid #30363d; border-radius:12px; padding:1.1rem 1.2rem;
-          background:#161b22; text-decoration:none; transition: border-color .15s, transform .15s; }
-  .card:hover { border-color:#a855f7; transform:translateY(-2px); box-shadow:0 6px 24px rgba(168,85,247,.18); }
-  .card h3 { margin:0 0 .25rem; color:#a855f7; font-size:1.05rem; }
+  .card { display:block; border:1px solid #334155; border-radius:12px; padding:1.1rem 1.2rem;
+          background:#111827; text-decoration:none; transition: border-color .15s, transform .15s; }
+  .card:hover { border-color:#60a5fa; transform:translateY(-2px); box-shadow:0 6px 24px rgba(96,165,250,.16); }
+  .card h3 { margin:0 0 .25rem; color:#60a5fa; font-size:1.05rem; }
   .card .meta { margin:0 0 .4rem; font-size:.8rem; color:#8b949e; }
-  .card .teaser { margin:0 0 .6rem; font-size:.92rem; color:#d6cfe3; }
+  .card .teaser { margin:0 0 .6rem; font-size:.92rem; color:#cbd5e1; }
   .tags { display:flex; flex-wrap:wrap; gap:.35rem; }
-  .tag { font-size:.72rem; color:#fbbf24; background:#1c1628; border:1px solid #3a2f52;
+  .tag { font-size:.72rem; color:#2dd4bf; background:#0f1a2b; border:1px solid #2a3a52;
          padding:.05rem .45rem; border-radius:999px; }
 </style>
