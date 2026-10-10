@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import Banner from "../../components/Banner.astro";
 export async function getStaticPaths(){
   const posts = await getCollection("posts");
-  return posts.map(p=>({ params:{slug:p.slug}, props:{entry:p} }));
+  return posts.map(p=>({ params:{slug:p.id}, props:{entry:p} }));
 }
 const { entry } = Astro.props;
 const { Content } = await render(entry);

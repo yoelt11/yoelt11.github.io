@@ -4,7 +4,7 @@ import PageLayout from "../layouts/PageLayout.astro";
 import CardGrid from "../components/CardGrid.astro";
 const posts = (await getCollection("posts")).sort((a,b)=>b.data.date.getTime()-a.data.date.getTime());
 const items = posts.map(p=>({
-  href:`/blog/${p.slug}/`,
+  href:`/blog/${p.id}/`,
   title:p.data.title,
   teaser:p.data.excerpt,
   meta:p.data.date.toISOString().slice(0,10),
