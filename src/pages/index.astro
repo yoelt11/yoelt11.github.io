@@ -1,10 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import NewsPanel from "../components/NewsPanel.astro";
+import Timeline from "../components/Timeline.astro";
 const news = [
   { date: "Oct 2026", text: "Launched this personal website — built with Astro, hosted on GitHub Pages.", href: "/projects/", hrefLabel: "Projects" },
   { date: "Oct 2023", text: "Completed my master's thesis on an artificial neural network framework for reduced order modeling.", href: "/publications/", hrefLabel: "Publications" },
   { date: "2023",     text: "Worked on activity recognition via object detection and sequences of poses at Anasoft Technology AG.", href: "/projects/activity-recognition/", hrefLabel: "Project" },
+];
+const education = [
+  { org: "University", date: "YYYY – present", role: "Role (e.g. PhD student / researcher)", desc: "Placeholder — add your institution and details." },
+  { org: "University", date: "YYYY – YYYY",   role: "M.Sc. in ...", desc: "Placeholder — add your master's institution (thesis Oct 2023)." },
+  { org: "University", date: "YYYY – YYYY",   role: "B.Sc. in ...", desc: "Placeholder — add your bachelor's institution." },
+];
+const experience = [
+  { org: "Anasoft Technology AG", date: "15.07.2023 – 15.03.2024", role: "Role (e.g. research intern)", desc: "Activity recognition via object detection and sequences of poses." },
+  { org: "Organization", date: "YYYY – YYYY", role: "Role", desc: "Placeholder — add more experience entries." },
 ];
 ---
 <Layout title="Edgar Torres" active="home">
@@ -26,12 +36,17 @@ const news = [
     </div>
   </section>
 
-  <section class="home-sections">
+  <section class="top-row">
+    <NewsPanel items={news} />
     <div class="focus">
       <h2>Current focus</h2>
       <p>Amortized PDE solving with PINNs, RBF methods, and domain decomposition.</p>
     </div>
-    <NewsPanel items={news} />
+  </section>
+
+  <section class="curriculum">
+    <Timeline title="Education" entries={education} />
+    <Timeline title="Experience" entries={experience} />
   </section>
 </Layout>
 <style is:inline>
@@ -51,10 +66,14 @@ const news = [
   .btn:hover { border-color:#2dd4bf; color:#2dd4bf; }
   .btn.primary { background:#2563eb; border-color:#2563eb; color:#fff; }
   .btn.primary:hover { background:#1d4ed8; border-color:#1d4ed8; color:#fff; }
-  .home-sections { border-top:1px solid #334155; margin-top:2.5rem; padding-top:1.75rem;
-                   display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem;
-                   align-items:start; }
+  /* News first, Current focus second — one row */
+  .top-row { border-top:1px solid #334155; margin-top:2.5rem; padding-top:1.75rem;
+             display:grid; grid-template-columns:1.4fr 1fr; gap:1.5rem; align-items:start; }
   .focus h2 { font-size:1rem; text-transform:uppercase; letter-spacing:.08em;
               color:#60a5fa; margin:0 0 .5rem; }
   .focus p { margin:0; color:#9ca3af; line-height:1.6; }
+  .focus { background:#111827; border:1px solid #334155; border-radius:14px; padding:1.25rem 1.5rem; }
+  /* Curriculum timeline(s) below */
+  .curriculum { display:grid; gap:1rem; margin-top:.5rem; }
+  @media (max-width: 800px) { .top-row { grid-template-columns:1fr; } }
 </style>
