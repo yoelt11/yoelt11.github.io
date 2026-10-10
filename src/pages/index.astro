@@ -8,21 +8,53 @@ import Layout from "../layouts/Layout.astro";
       <div class="hero-text">
         <h1>Hi, I'm Edgar Torres</h1>
         <p class="sub">Machine Learning Researcher &amp; Musician</p>
-        <p>I work on physics-informed neural networks, radial-basis-function methods, and
-           domain decomposition for amortized PDE solving. Selected work below; full lists
-           in each tab.</p>
+        <p class="value">I develop machine-learning methods for solving PDEs more efficiently, with a focus on
+           physics-informed neural networks, radial-basis-function methods, and domain decomposition. My work
+           connects numerical methods and ML to make amortized PDE solvers more accurate, scalable, and reusable.</p>
+        <div class="ctas">
+          <a class="btn primary" href="mailto:edgar.torres@ki.uni-stuttgart.de">Email me</a>
+          <a class="btn" href="/publications/">Publications</a>
+          <a class="btn" href="/projects/">Projects</a>
+        </div>
       </div>
     </div>
   </section>
+
+  <section class="highlights">
+    <h2>Current focus</h2>
+    <p>Amortized PDE solving with PINNs, RBF methods, and domain decomposition.</p>
+
+    <h2>Recent work</h2>
+    <ul>
+      <li>Master's thesis on an ANN framework for reduced order modeling (2023).</li>
+    </ul>
+
+    <h2>Also</h2>
+    <p>Music and selected technical projects.</p>
+  </section>
 </Layout>
 <style is:inline>
-  .hero { padding:4rem 0 2rem; }
+  .hero { padding:4rem 0 1.5rem; }
   .hero-card { display:flex; gap:2rem; align-items:center; flex-wrap:wrap; }
   .portrait { width:170px; height:170px; border-radius:50%; object-fit:cover;
               border:3px solid #60a5fa; box-shadow:0 0 0 6px rgba(96,165,250,.12),
               0 10px 40px rgba(96,165,250,.22); }
-  .hero-text { flex:1; min-width:260px; }
+  .hero-text { flex:1; min-width:280px; }
   .hero h1 { font-size:2.6rem; margin:0 0 .4rem; }
   .sub { color:#2dd4bf; font-weight:600; margin:0 0 1rem; }
-  .hero p:last-child { color:#9ca3af; max-width:64ch; }
+  .value { color:#cbd5e1; max-width:64ch; margin:0 0 1.25rem; }
+  .ctas { display:flex; gap:.7rem; flex-wrap:wrap; }
+  .btn { display:inline-block; padding:.55rem 1.1rem; border-radius:8px;
+         border:1px solid #334155; color:#e5e7eb; text-decoration:none; font-weight:600; font-size:.92rem;
+         transition: border-color .15s, background .15s; }
+  .btn:hover { border-color:#2dd4bf; color:#2dd4bf; }
+  .btn.primary { background:#2563eb; border-color:#2563eb; color:#fff; }
+  .btn.primary:hover { background:#1d4ed8; border-color:#1d4ed8; color:#fff; }
+  .highlights { border-top:1px solid #334155; margin-top:2.5rem; padding-top:1.75rem;
+                display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
+  .highlights h2 { font-size:1rem; text-transform:uppercase; letter-spacing:.08em;
+                   color:#60a5fa; margin:0 0 .4rem; }
+  .highlights p { margin:0; color:#9ca3af; }
+  .highlights ul { margin:0; padding-left:1.1rem; color:#9ca3af; }
+  .highlights li { margin:.2rem 0; }
 </style>
