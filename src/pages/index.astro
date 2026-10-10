@@ -1,5 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import NewsPanel from "../components/NewsPanel.astro";
+const news = [
+  { date: "Oct 2026", text: "Launched this personal website — built with Astro, hosted on GitHub Pages.", href: "/projects/", hrefLabel: "Projects" },
+  { date: "Oct 2023", text: "Completed my master's thesis on an artificial neural network framework for reduced order modeling.", href: "/publications/", hrefLabel: "Publications" },
+  { date: "2023",     text: "Worked on activity recognition via object detection and sequences of poses at Anasoft Technology AG.", href: "/projects/activity-recognition/", hrefLabel: "Project" },
+];
 ---
 <Layout title="Edgar Torres" active="home">
   <section class="hero">
@@ -20,17 +26,12 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="highlights">
-    <h2>Current focus</h2>
-    <p>Amortized PDE solving with PINNs, RBF methods, and domain decomposition.</p>
-
-    <h2>Recent work</h2>
-    <ul>
-      <li>Master's thesis on an ANN framework for reduced order modeling (2023).</li>
-    </ul>
-
-    <h2>Also</h2>
-    <p>Music and selected technical projects.</p>
+  <section class="home-sections">
+    <div class="focus">
+      <h2>Current focus</h2>
+      <p>Amortized PDE solving with PINNs, RBF methods, and domain decomposition.</p>
+    </div>
+    <NewsPanel items={news} />
   </section>
 </Layout>
 <style is:inline>
@@ -46,15 +47,14 @@ import Layout from "../layouts/Layout.astro";
   .ctas { display:flex; gap:.7rem; flex-wrap:wrap; }
   .btn { display:inline-block; padding:.55rem 1.1rem; border-radius:8px;
          border:1px solid #334155; color:#e5e7eb; text-decoration:none; font-weight:600; font-size:.92rem;
-         transition: border-color .15s, background .15s; }
+         transition:border-color .15s, background .15s; }
   .btn:hover { border-color:#2dd4bf; color:#2dd4bf; }
   .btn.primary { background:#2563eb; border-color:#2563eb; color:#fff; }
   .btn.primary:hover { background:#1d4ed8; border-color:#1d4ed8; color:#fff; }
-  .highlights { border-top:1px solid #334155; margin-top:2.5rem; padding-top:1.75rem;
-                display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
-  .highlights h2 { font-size:1rem; text-transform:uppercase; letter-spacing:.08em;
-                   color:#60a5fa; margin:0 0 .4rem; }
-  .highlights p { margin:0; color:#9ca3af; }
-  .highlights ul { margin:0; padding-left:1.1rem; color:#9ca3af; }
-  .highlights li { margin:.2rem 0; }
+  .home-sections { border-top:1px solid #334155; margin-top:2.5rem; padding-top:1.75rem;
+                   display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem;
+                   align-items:start; }
+  .focus h2 { font-size:1rem; text-transform:uppercase; letter-spacing:.08em;
+              color:#60a5fa; margin:0 0 .5rem; }
+  .focus p { margin:0; color:#9ca3af; line-height:1.6; }
 </style>
