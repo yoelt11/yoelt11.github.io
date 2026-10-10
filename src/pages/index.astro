@@ -50,6 +50,24 @@ const teaching = [
     </div>
   </section>
 
+  <section class="affiliations">
+    <h2>Affiliations</h2>
+    <div class="aff-grid">
+      <a class="aff-card" href="https://mls-lab.org/" rel="noopener" target="_blank">
+        <span class="aff-name">Machine Learning and Simulation Lab</span>
+        <span class="aff-org">University of Stuttgart</span>
+      </a>
+      <a class="aff-card" href="https://imprs.is.mpg.de/" rel="noopener" target="_blank">
+        <span class="aff-name">IMPRS-IS</span>
+        <span class="aff-org">International Max Planck Research School for Intelligent Systems</span>
+      </a>
+      <a class="aff-card" href="https://www.industrial-data-lab.de/" rel="noopener" target="_blank">
+        <span class="aff-name">Industrial Data Lab</span>
+        <span class="aff-org">Talents and Technologies for Data</span>
+      </a>
+    </div>
+  </section>
+
   <section class="curriculum">
     <Timeline title="Education" entries={education} />
     <Timeline title="Experience" entries={experience} />
@@ -79,6 +97,16 @@ const teaching = [
               color:#60a5fa; margin:0 0 .5rem; }
   .focus p { margin:0; color:#9ca3af; line-height:1.6; }
   .focus { background:#111827; border:1px solid #334155; border-radius:14px; padding:1.25rem 1.5rem; }
-  .curriculum { display:grid; gap:1rem; margin-top:.5rem; }
+  .affiliations { border-top:1px solid #334155; margin-top:2.5rem; padding-top:1.75rem; }
+  .affiliations h2 { font-size:1rem; text-transform:uppercase; letter-spacing:.08em;
+                     color:#60a5fa; margin:0 0 1rem; }
+  .aff-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
+  .aff-card { display:flex; flex-direction:column; gap:.2rem; padding:1rem 1.2rem;
+              border:1px solid #334155; border-radius:12px; background:#111827;
+              text-decoration:none; transition:border-color .15s, transform .15s; }
+  .aff-card:hover { border-color:#60a5fa; transform:translateY(-2px); }
+  .aff-name { color:#e5e7eb; font-weight:700; font-size:.95rem; }
+  .aff-org { color:#9ca3af; font-size:.82rem; line-height:1.45; }
+  .curriculum { display:grid; gap:1rem; margin-top:1.5rem; }
   @media (max-width: 800px) { .top-row { grid-template-columns:1fr; } }
 </style>
