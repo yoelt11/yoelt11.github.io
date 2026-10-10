@@ -38,6 +38,17 @@ const teaching = [
           <a class="btn" href="/publications/">Publications</a>
           <a class="btn" href="/projects/">Projects</a>
         </div>
+        <div class="aff-logos">
+          <a href="https://mls-lab.org/" rel="noopener" target="_blank" title="Machine Learning and Simulation Lab — University of Stuttgart">
+            <img src="/affiliations/mls-logo.png" alt="Machine Learning and Simulation Lab" loading="lazy" />
+          </a>
+          <a href="https://imprs.is.mpg.de/" rel="noopener" target="_blank" title="IMPRS-IS — International Max Planck Research School for Intelligent Systems">
+            <img src="/affiliations/imprs-logo.png" alt="IMPRS-IS" loading="lazy" />
+          </a>
+          <a href="https://www.industrial-data-lab.de/" rel="noopener" target="_blank" title="Industrial Data Lab">
+            <img src="/affiliations/idl-logo.png" alt="Industrial Data Lab" loading="lazy" />
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -47,24 +58,6 @@ const teaching = [
     <div class="focus">
       <h2>Current focus</h2>
       <p>Amortized PDE solving with PINNs, RBF methods, and domain decomposition.</p>
-    </div>
-  </section>
-
-  <section class="affiliations">
-    <h2>Affiliations</h2>
-    <div class="aff-grid">
-      <a class="aff-card" href="https://mls-lab.org/" rel="noopener" target="_blank">
-        <span class="aff-name">Machine Learning and Simulation Lab</span>
-        <span class="aff-org">University of Stuttgart</span>
-      </a>
-      <a class="aff-card" href="https://imprs.is.mpg.de/" rel="noopener" target="_blank">
-        <span class="aff-name">IMPRS-IS</span>
-        <span class="aff-org">International Max Planck Research School for Intelligent Systems</span>
-      </a>
-      <a class="aff-card" href="https://www.industrial-data-lab.de/" rel="noopener" target="_blank">
-        <span class="aff-name">Industrial Data Lab</span>
-        <span class="aff-org">Talents and Technologies for Data</span>
-      </a>
     </div>
   </section>
 
@@ -97,16 +90,10 @@ const teaching = [
               color:#60a5fa; margin:0 0 .5rem; }
   .focus p { margin:0; color:#9ca3af; line-height:1.6; }
   .focus { background:#111827; border:1px solid #334155; border-radius:14px; padding:1.25rem 1.5rem; }
-  .affiliations { border-top:1px solid #334155; margin-top:2.5rem; padding-top:1.75rem; }
-  .affiliations h2 { font-size:1rem; text-transform:uppercase; letter-spacing:.08em;
-                     color:#60a5fa; margin:0 0 1rem; }
-  .aff-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
-  .aff-card { display:flex; flex-direction:column; gap:.2rem; padding:1rem 1.2rem;
-              border:1px solid #334155; border-radius:12px; background:#111827;
-              text-decoration:none; transition:border-color .15s, transform .15s; }
-  .aff-card:hover { border-color:#60a5fa; transform:translateY(-2px); }
-  .aff-name { color:#e5e7eb; font-weight:700; font-size:.95rem; }
-  .aff-org { color:#9ca3af; font-size:.82rem; line-height:1.45; }
+  .aff-logos { display:flex; align-items:center; gap:1.6rem; flex-wrap:wrap; margin-top:1.25rem; }
+  .aff-logos a { opacity:.78; transition:opacity .15s; }
+  .aff-logos a:hover { opacity:1; }
+  .aff-logos img { height:30px; width:auto; max-width:130px; object-fit:contain;  }
   .curriculum { display:grid; gap:1rem; margin-top:1.5rem; }
   @media (max-width: 800px) { .top-row { grid-template-columns:1fr; } }
 </style>
