@@ -1,0 +1,43 @@
+---
+import Header from "../components/Header.astro";
+interface Props { title?: string; active: "home"|"projects"|"publications"|"blog" }
+const { title = "Edgar Torres", active } = Astro.props;
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{title}</title>
+  <style is:global>
+    :root { --accent:#f0b429; --panel:#161b22; --border:#30363d; --text:#e6edf3; --muted:#8b949e; }
+    * { box-sizing:border-box; }
+    html { color-scheme: dark; }
+    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+           background:radial-gradient(900px 500px at 15% -5%, rgba(240,180,41,.06), transparent 60%),
+                      #0d1117; color:var(--text); line-height:1.6; }
+    main { max-width:1080px; margin:0 auto; padding:0 1.5rem 3rem; }
+    a { color:var(--accent); }
+    footer { border-top:1px solid var(--border); margin-top:3rem; padding:1.4rem 1.5rem;
+             max-width:1080px; margin-left:auto; margin-right:auto; display:flex;
+             gap:1.4rem; flex-wrap:wrap; align-items:center; color:var(--muted); font-size:.9rem;}
+    footer a { color:var(--muted); }
+    footer a:hover { color:var(--text); }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.85em;
+           background:#21262d; padding:.1em .35em; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <Header active={active}/>
+  <main>
+    <slot/>
+  </main>
+  <footer>
+    <span>© {year} Edgar Torres</span>
+    <a href="https://github.com/yoelt11">GitHub</a>
+    <a href="https://www.linkedin.com/in/etorres11">LinkedIn</a>
+    <a href="https://twitter.com/EYTR_11">Twitter</a>
+  </footer>
+</body>
+</html>

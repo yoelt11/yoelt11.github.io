@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "../layouts/PageLayout.astro";
+import CardGrid from "../components/CardGrid.astro";
+const projects = (await getCollection("projects")).sort((a,b)=>(b.data.year??0)-(a.data.year??0));
+const items = projects.map(p=>({
+  href:`/projects/${p.slug}/`,
+  title:p.data.title,
+  teaser:p.data.summary,
+  meta:p.data.year ? String(p.data.year) : undefined,
+  tags:p.data.tags,
+}));
+---
+<PageLayout title="Projects - Edgar Torres" active="projects"
+  bannerTitle="Projects" bannerLead="Selected research and engineering work. Click a card for the full write-up, figures, and links.">
+  <CardGrid items={items}/>
+</PageLayout>

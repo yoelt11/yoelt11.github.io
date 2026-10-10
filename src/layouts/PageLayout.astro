@@ -1,0 +1,11 @@
+---
+import Layout from "./Layout.astro";
+import Banner from "../components/Banner.astro";
+interface Props { title: string; active:"home"|"projects"|"publications"|"blog";
+                  bannerTitle: string; bannerLead: string }
+const { title, active, bannerTitle, bannerLead } = Astro.props;
+---
+<Layout title={title} active={active}>
+  <Banner title={bannerTitle} lead={bannerLead}/>
+  <slot/>
+</Layout>

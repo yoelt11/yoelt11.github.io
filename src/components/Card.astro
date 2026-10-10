@@ -1,0 +1,21 @@
+---
+interface Props { href: string; title: string; teaser: string; meta?: string; tags?: string[] }
+const { href, title, teaser, meta, tags = [] } = Astro.props;
+---
+<a class="card" href={href}>
+  <h3>{title}</h3>
+  {meta && <p class="meta">{meta}</p>}
+  <p class="teaser">{teaser}</p>
+  {tags.length>0 && <div class="tags">{tags.map(t=><span class="tag">{t}</span>)}</div>}
+</a>
+<style>
+  .card { display:block; border:1px solid #30363d; border-radius:12px; padding:1.1rem 1.2rem;
+          background:#161b22; text-decoration:none; transition: border-color .15s, transform .15s; }
+  .card:hover { border-color:#f0b429; transform:translateY(-2px); }
+  .card h3 { margin:0 0 .25rem; color:#f0b429; font-size:1.05rem; }
+  .card .meta { margin:0 0 .4rem; font-size:.8rem; color:#8b949e; }
+  .card .teaser { margin:0 0 .6rem; font-size:.92rem; color:#c9d1d9; }
+  .tags { display:flex; flex-wrap:wrap; gap:.35rem; }
+  .tag { font-size:.72rem; color:#8b949e; background:#21262d; border:1px solid #30363d;
+         padding:.05rem .45rem; border-radius:999px; }
+</style>

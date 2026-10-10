@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout title="Edgar Torres" active="home">
+  <section class="hero">
+    <h1>Hi, I'm Edgar Torres</h1>
+    <p class="sub">Machine Learning Researcher &amp; Musician</p>
+    <p>I work on physics-informed neural networks, radial-basis-function methods, and
+       domain decomposition for amortized PDE solving. Selected work below; full lists in
+       each tab.</p>
+  </section>
+  <section>
+    <h2>Latest projects</h2>
+    <p><a href="/projects/">All projects →</a></p>
+  </section>
+</Layout>
+<style is:inline>
+  .hero { padding:4rem 0 2rem; }
+  .hero h1 { font-size:2.6rem; margin:0 0 .4rem; }
+  .sub { color:#f0b429; font-weight:600; margin:0 0 1rem; }
+  .hero p:last-child { color:#8b949e; max-width:64ch; }
+</style>

@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "../layouts/PageLayout.astro";
+import CardGrid from "../components/CardGrid.astro";
+const pubs = (await getCollection("publications")).sort((a,b)=>b.data.year-a.data.year);
+const items = pubs.map(p=>({
+  href:p.data.links?.paper ?? "#",
+  title:p.data.title,
+  teaser:`${p.data.venue}${p.data.authors ? " — "+p.data.authors : ""}`,
+  meta:String(p.data.year),
+}));
+---
+<PageLayout title="Publications - Edgar Torres" active="publications"
+  bannerTitle="Publications" bannerLead="Peer-reviewed papers and preprints. Cards link out to the arXiv / venue version.">
+  <CardGrid items={items}/>
+</PageLayout>

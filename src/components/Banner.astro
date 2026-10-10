@@ -1,0 +1,15 @@
+---
+interface Props { title: string; lead: string }
+const { title, lead } = Astro.props;
+---
+<section class="banner">
+  <h2>{title}</h2>
+  <p>{lead}</p>
+</section>
+<style>
+  .banner { border:1px solid #30363d; border-radius:14px; padding:1.4rem 1.6rem;
+            margin:1.6rem 0 1.8rem;
+            background:linear-gradient(120deg, rgba(240,180,41,.08), rgba(240,180,41,.02) 60%); }
+  .banner h2 { margin:0 0 .35rem; font-size:1.6rem; }
+  .banner p { margin:0; color:#8b949e; max-width:70ch; }
+</style>

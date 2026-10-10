@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Banner from "../../components/Banner.astro";
+export async function getStaticPaths(){
+  const projects = await getCollection("projects");
+  return projects.map(p=>({ params:{slug:p.slug}, props:{entry:p} }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<Layout title={entry.data.title} active="projects">
+  <Banner title={entry.data.title} lead={entry.data.summary}/>
+  <p class="meta-line">
+    {entry.data.year && <span>{entry.data.year} · </span>}
+    {entry.data.tags?.join(" · ")}
+    {entry.data.links?.paper && <> · <a href={entry.data.links.paper}>paper</a></>}
+    {entry.data.links?.code && <> · <a href={entry.data.links.code}>code</a></>}
+    {entry.data.links?.site && <> · <a href={entry.data.links.site}>live site</a></>}
+  </p>
+  <article><Content/></article>
+</Layout>
+<style is:inline>
+  .meta-line { color:#8b949e; margin-top:-.4rem; }
+</style>

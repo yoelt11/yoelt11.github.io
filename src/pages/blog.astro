@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "../layouts/PageLayout.astro";
+import CardGrid from "../components/CardGrid.astro";
+const posts = (await getCollection("posts")).sort((a,b)=>b.data.date.getTime()-a.data.date.getTime());
+const items = posts.map(p=>({
+  href:`/blog/${p.slug}/`,
+  title:p.data.title,
+  teaser:p.data.excerpt,
+  meta:p.data.date.toISOString().slice(0,10),
+  tags:p.data.tags,
+}));
+---
+<PageLayout title="Blog - Edgar Torres" active="blog"
+  bannerTitle="Blog" bannerLead="Notes, write-ups, and progress logs in roughly reverse-chronological order.">
+  <CardGrid items={items}/>
+</PageLayout>

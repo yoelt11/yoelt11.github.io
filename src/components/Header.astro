@@ -1,0 +1,31 @@
+---
+interface Props { active: "home"|"projects"|"publications"|"blog" }
+const { active } = Astro.props;
+const tabs = [
+  { id:"home",          label:"Home",          href:"/" },
+  { id:"projects",      label:"Projects",      href:"/projects/" },
+  { id:"publications",  label:"Publications",  href:"/publications/" },
+  { id:"blog",          label:"Blog",          href:"/blog/" },
+];
+---
+<header class="header">
+  <nav>
+    <a class="brand" href="/">Edgar Torres</a>
+    <div class="tabs">
+      {tabs.map((t) => (
+        <a  class={active===t.id ? "active" : ""} href={t.href}>{t.label}</a>
+      ))}
+    </div>
+  </nav>
+</header>
+<style>
+  .header { position: sticky; top: 0; z-index: 50; background: rgba(22,27,34,.92);
+            backdrop-filter: blur(8px); border-bottom: 1px solid #30363d; }
+  .header nav { max-width: 1080px; margin: 0 auto; padding: .9rem 1.5rem;
+                display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap;}
+  .brand { font-weight: 800; font-size: 1.1rem; color: #e6edf3; letter-spacing: .02em; }
+  .tabs { display: flex; gap: 1.4rem; }
+  .tabs a { color: #8b949e; font-weight: 600; font-size: .95rem; }
+  .tabs a:hover { color: #e6edf3; }
+  .tabs a.active { color: #f0b429; }
+</style>
