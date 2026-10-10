@@ -16,6 +16,10 @@ const experience = [
   { org: "Anasoft Technology AG", date: "15.07.2023 – 15.03.2024", role: "Role (e.g. research intern)", desc: "Activity recognition via object detection and sequences of poses." },
   { org: "Organization", date: "YYYY – YYYY", role: "Role", desc: "Placeholder — add more experience entries." },
 ];
+const teaching = [
+  { org: "University", date: "YYYY – present", role: "Teaching Assistant", desc: "Placeholder — add course / institution and details." },
+  { org: "University", date: "YYYY – YYYY",   role: "Teaching Assistant", desc: "Placeholder — add another course." },
+];
 ---
 <Layout title="Edgar Torres" active="home">
   <section class="hero">
@@ -47,6 +51,7 @@ const experience = [
   <section class="curriculum">
     <Timeline title="Education" entries={education} />
     <Timeline title="Experience" entries={experience} />
+    <Timeline title="Teaching" entries={teaching} />
   </section>
 </Layout>
 <style is:inline>

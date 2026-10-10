@@ -41,9 +41,10 @@ const { title = "News", items } = Astro.props;
   }
   .news-rule { height:2px; width:54px; border-radius:2px; margin:0 0 .9rem;
                background:linear-gradient(90deg, #2563eb, rgba(45,212,191,.15)); }
-  .news-list { list-style:none; margin:0; padding:0; height:72px; overflow-y:auto; overflow-x:hidden; scrollbar-width:thin; }
-  .news-list::-webkit-scrollbar { width:5px; }
-  .news-list::-webkit-scrollbar-thumb { background:#334155; border-radius:999px; }
+  .news-list { list-style:none; margin:0; padding:0; height:72px; overflow-y:scroll; overflow-x:hidden; scrollbar-width:thin; scrollbar-color:#60a5fa #1f2937; }
+  .news-list::-webkit-scrollbar { width:8px; }
+  .news-list::-webkit-scrollbar-track { background:#1f2937; border-radius:999px; }
+  .news-list::-webkit-scrollbar-thumb { background:#60a5fa; border-radius:999px; }
   .news-item { padding:.55rem .7rem .55rem .85rem; border-radius:8px;
                border-left:2px solid rgba(37,99,235,.35); transition:background .2s, border-color .2s; }
   .news-item + .news-item { margin-top:.35rem; }
