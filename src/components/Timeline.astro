@@ -1,5 +1,5 @@
 ---
-interface Entry { org: string; date: string; role: string; desc: string; logo?: string; logoSite?: string }
+interface Entry { org: string; date: string; role: string; desc: string; logo?: string; logoSite?: string; tag?: string; site?: string; siteLabel?: string; }
 interface Props { title: string; entries: Entry[]; highlights?: Entry[] }
 const { title, entries, highlights = [] } = Astro.props;
 ---
@@ -30,7 +30,9 @@ const { title, entries, highlights = [] } = Astro.props;
               <span class="tl-date">{e.date}</span>
             </div>
             <div class="tl-role">{e.role}</div>
+            {e.tag && <span class="tl-tag">{e.tag}</span>}
             <div class="tl-desc">{e.desc}</div>
+            {e.site && <a class="tl-site" href={e.site} rel="noopener" target="_blank">{e.siteLabel ?? e.site}</a>}
           </div>
           {e.logo && (
             <div class="tl-logo">
@@ -95,6 +97,11 @@ const { title, entries, highlights = [] } = Astro.props;
   .tl-date { font-size:.75rem; color:#2dd4bf; background:rgba(45,212,191,.08);
              border:1px solid rgba(45,212,191,.25); border-radius:999px; padding:2px 10px; white-space:nowrap; }
   .tl-role { margin:.25rem 0 .35rem; font-size:.9rem; color:#60a5fa; font-weight:600; }
+  .tl-tag { display:inline-block; margin:0 0 .35rem; font-size:.62rem; font-weight:800;
+            text-transform:uppercase; letter-spacing:.08em; color:#fbbf24;
+            background:rgba(251,191,36,.10); border:1px solid rgba(251,191,36,.45);
+            border-radius:999px; padding:.12rem .6rem; }
+  .tl-site { display:inline-block; margin-top:.3rem; font-size:.84rem; color:#60a5fa; font-weight:600; }
   .tl-desc { margin:0; font-size:.9rem; color:#9ca3af; line-height:1.55; }
   .tl-logo { flex-shrink:0; width:86px; display:flex; align-items:center; justify-content:center; }
   .tl-logo img { max-width:86px; max-height:44px; width:auto; height:auto; object-fit:contain; }
