@@ -20,24 +20,28 @@ const experience = [
   { org: "Honeywell Aerospace", date: "Dec 2014 – Feb 2015", role: "Intern", desc: "Created work instructions for composite material testing.", logo: "/timeline/honeywell.png", logoSite: "https://www.honeywell.com/" },
 ];
 const teaching = [
-  { org: "University of Stuttgart — SimTech", date: "WS23/24 – present", role: "Organizer, Science Communication Seminar Series",
-    desc: "Organizing and managing the semester-long Science Communication seminar series.",
-    site: "https://www.simtech.uni-stuttgart.de/", siteLabel: "SimTech" },
-  { org: "University of Stuttgart", date: "WS24/25 · SS25", role: "Lecturer — Machine Learning for Science",
+  // —— Highlights (tagged) ——
+  { org: "University of Stuttgart", date: "WS24/25 · SS25", role: "Teacher Assistant — Machine Learning for Science",
     desc: "Semester-long seminar.",
     site: "https://www.uni-stuttgart.de/studium/studienangebot/fsb/ws24-25/beitraege/maschinenlernen-naturwissenschaften/",
-    siteLabel: "ML for Science (WS24/25)" },
-  { org: "University of Stuttgart", date: "WS25/26", role: "Tutorial — Introduction to Physics-Informed Neural Networks",
-    desc: "Part of the AI4Nuclear 2025 workshop (IKE).",
-    site: "https://www.ike.uni-stuttgart.de/lehre/seminare/AI-Workshop-2025/", siteLabel: "AI4Nuclear 2025" },
-  { org: "University of Stuttgart", date: "Oct 2025 – present", role: "Examiner", desc: "Exam supervision, Machine Learning for Science." },
-  { org: "University of Stuttgart", date: "SS26", role: "Exercise Session Lead — Reinforcement Learning",
-    desc: "Exercise sessions for the RL lecture." },
+    siteLabel: "ML for Science", highlight: true },
+  { org: "University of Stuttgart — SimTech", date: "WS23/24 – present", role: "Organizer, Science Communication Seminar Series",
+    desc: "Semester-long science-communication seminar series.",
+    site: "https://www.simtech.uni-stuttgart.de/", siteLabel: "SimTech", highlight: true },
   { org: "University of Stuttgart", date: "WS25/26", role: "Tutorial — Foundations of AI (Deep Learning module)",
-    desc: "Dialogue session (lab) as part of the Foundations of AI lecture." },
+    desc: "Dialogue session (lab) as part of the Foundations of AI lecture.", highlight: true },
+  { org: "University of Stuttgart", date: "SS26", role: "Exercise Session Lead — Reinforcement Learning",
+    desc: "Exercise sessions for the RL lecture.", highlight: true },
+  { org: "University of Stuttgart", date: "WS25/26", role: "Workshop Tutor — Introduction to Physics-Informed Neural Networks",
+    desc: "One-off workshop for AI4Nuclear 2025 (IKE).",
+    site: "https://www.ike.uni-stuttgart.de/lehre/seminare/AI-Workshop-2025/", siteLabel: "AI4Nuclear 2025",
+    tag: "One-off workshop", highlight: true },
+  // —— Full history ——
   { org: "University of Stuttgart", date: "WS23/24", role: "Teaching Assistant — Deep Learning for Science",
     desc: "Seminar at Stuttgart." },
 ];
+const teachingHighlights = teaching.filter((t) => t.highlight);
+
 
 
 ---
@@ -85,7 +89,7 @@ const teaching = [
   <section class="curriculum">
     <Timeline title="Education" entries={education} />
     <Timeline title="Experience" entries={experience} />
-    <Timeline title="Teaching" entries={teaching} />
+    <Timeline title="Teaching" entries={teaching} highlights={teachingHighlights} />
   </section>
 </Layout>
 <style is:inline>

@@ -1,10 +1,25 @@
 ---
 interface Entry { org: string; date: string; role: string; desc: string; logo?: string; logoSite?: string }
-interface Props { title: string; entries: Entry[] }
-const { title, entries } = Astro.props;
+interface Props { title: string; entries: Entry[]; highlights?: Entry[] }
+const { title, entries, highlights = [] } = Astro.props;
 ---
 <section class="timeline-section">
   <h2>{title}</h2>
+  {highlights.length > 0 && (
+    <div class="highlights">
+      {highlights.map((e) => (
+        <div class="hl-card">
+          <div class="hl-top">
+            <span class="hl-role">{e.role}</span>
+            <span class="hl-date">{e.date}</span>
+          </div>
+          {e.tag && <span class="tag-badge">{e.tag}</span>}
+          <div class="hl-desc">{e.desc}</div>
+          {e.site && <a class="hl-link" href={e.site} rel="noopener" target="_blank">{e.siteLabel ?? e.site}</a>}
+        </div>
+      ))}
+    </div>
+  )}
   <div class="tl">
     {entries.map((e) => (
       <div class="tl-item">
