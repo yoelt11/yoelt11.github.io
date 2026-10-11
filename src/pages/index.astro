@@ -41,6 +41,15 @@ const teaching = [
 ];
 const teachingHighlights = teaching.filter((t) => t.highlight);
 
+const supervision = [
+  { date: "2026", role: "Master's Thesis — supervised",
+    desc: "Supervised a master's thesis in collaboration with Bosch.",
+    site: "https://www2.informatik.uni-stuttgart.de/cgi-bin/NCSTRL/NCSTRL_view.pl?id=MSTR-2026-37&mod=1&engl=1&inst=FAK",
+    siteLabel: "NCSTRL entry" },
+  { date: "Sep 2023", role: "Bachelor's Thesis — supervised",
+    desc: "Self-Supervised Anomaly Detection in High-Dimensional Vehicle Test Data under Domain Shift, in collaboration with Mercedes AG." },
+];
+
 
 
 ---
@@ -89,6 +98,7 @@ const teachingHighlights = teaching.filter((t) => t.highlight);
     <Timeline title="Education" entries={education} />
     <Timeline title="Experience" entries={experience} />
     <Timeline title="Teaching" entries={teaching} subtitle="University of Stuttgart" />
+    <Timeline title="Thesis Supervision" entries={supervision} subtitle="University of Stuttgart" />
   </section>
 </Layout>
 <style is:inline>
