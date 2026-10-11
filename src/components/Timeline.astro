@@ -48,6 +48,28 @@ const { title, entries, highlights = [] } = Astro.props;
   .timeline-section { border-top:1px solid #334155; padding-top:1.75rem; margin-top:1rem; }
   .timeline-section h2 { font-size:1rem; text-transform:uppercase; letter-spacing:.08em;
                          color:#60a5fa; margin:0 0 1.1rem; }
+  /* Highlights: real cards */
+  .timeline-section.highlights-grid, .highlights {
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1rem;
+  }
+  .hl-card {
+    background:#111827; border:1px solid #334155; border-radius:12px;
+    padding:1rem 1.15rem; display:flex; flex-direction:column; gap:.45rem;
+    box-shadow:0 1px 3px rgba(0,0,0,.4);
+    transition:border-color .15s, transform .15s;
+  }
+  .hl-card:hover { border-color:#60a5fa; transform:translateY(-2px); }
+  .hl-top { display:flex; align-items:baseline; justify-content:space-between; gap:.6rem; flex-wrap:wrap; }
+  .hl-role { font-weight:700; font-size:.95rem; color:#e5e7eb; line-height:1.35; }
+  .hl-date { font-size:.74rem; color:#2dd4bf; background:rgba(45,212,191,.08);
+             border:1px solid rgba(45,212,191,.25); border-radius:999px; padding:2px 10px; white-space:nowrap; }
+  .tag-badge {
+    align-self:flex-start; font-size:.64rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em;
+    color:#fbbf24; background:rgba(251,191,36,.10); border:1px solid rgba(251,191,36,.45);
+    border-radius:999px; padding:.12rem .6rem;
+  }
+  .hl-desc { color:#9ca3af; font-size:.87rem; line-height:1.55; }
+  .hl-link { font-size:.84rem; color:#60a5fa; font-weight:600; }
   .tl { position:relative; max-width:820px; margin:0; padding-left:36px; }
   .tl::before { content:""; position:absolute; left:7px; top:12px; bottom:12px; width:2px;
                 background:linear-gradient(to bottom, rgba(96,165,250,.75), rgba(45,212,191,.12));
