@@ -5,7 +5,7 @@ const { title, entries, highlights = [] } = Astro.props;
 ---
 <section class="timeline-section">
   <h2>{title}</h2>
-  {highlights.length > 0 && (
+  {highlights.length > 0 ? (
     <div class="highlights">
       {highlights.map((e) => (
         <div class="hl-card">
@@ -19,7 +19,7 @@ const { title, entries, highlights = [] } = Astro.props;
         </div>
       ))}
     </div>
-  )}
+  ) : (
   <div class="tl">
     {entries.map((e) => (
       <div class="tl-item">
@@ -42,6 +42,7 @@ const { title, entries, highlights = [] } = Astro.props;
       </div>
     ))}
   </div>
+  )}
 </section>
 <style>
   .timeline-section { border-top:1px solid #334155; padding-top:1.75rem; margin-top:1rem; }
