@@ -1,10 +1,11 @@
 ---
 interface Entry { org: string; date: string; role: string; desc: string; logo?: string; logoSite?: string; tag?: string; site?: string; siteLabel?: string; }
-interface Props { title: string; entries: Entry[]; highlights?: Entry[] }
-const { title, entries, highlights = [] } = Astro.props;
+interface Props { title: string; entries: Entry[]; highlights?: Entry[]; subtitle?: string }
+const { title, entries, highlights = [], subtitle } = Astro.props;
 ---
 <section class="timeline-section">
   <h2>{title}</h2>
+  {subtitle && <p class="tl-subtitle">{subtitle}</p>}
   {highlights.length > 0 ? (
     <div class="highlights">
       {highlights.map((e) => (
@@ -26,7 +27,7 @@ const { title, entries, highlights = [] } = Astro.props;
         <div class="tl-card">
           <div class="tl-body">
             <div class="tl-head">
-              <h5 class="tl-org">{e.org}</h5>
+              {e.org && <h5 class="tl-org">{e.org}</h5>}
               <span class="tl-date">{e.date}</span>
             </div>
             <div class="tl-role">{e.role}</div>
@@ -49,7 +50,8 @@ const { title, entries, highlights = [] } = Astro.props;
 <style>
   .timeline-section { border-top:1px solid #334155; padding-top:1.75rem; margin-top:1rem; }
   .timeline-section h2 { font-size:1rem; text-transform:uppercase; letter-spacing:.08em;
-                         color:#60a5fa; margin:0 0 1.1rem; }
+                         color:#60a5fa; margin:0 0 .2rem; }
+  .tl-subtitle { margin:0 0 1.1rem; font-size:.82rem; color:#9ca3af; }
   /* Highlights: real cards */
   .timeline-section.highlights-grid, .highlights {
     display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1rem;
